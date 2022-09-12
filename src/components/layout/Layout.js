@@ -1,5 +1,8 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import * as Icon from 'react-bootstrap-icons';
+import Navbar from '../Navbar/Navbar';
+import Playlist from '../Playlist/Playlist';
 import styles from './Layout.module.css';
 
 export default function Layout({ children }) {
@@ -12,23 +15,27 @@ export default function Layout({ children }) {
                 <div className=' ps-3 py-3 text-white d-column-flex  align-items-center justify-content-center'>
                     <ul className='list'>
                         <li className={`${styles.routes} list-group-item my-4 fs-6s align-items-center  flex justify-content-center`}>
-                            <Icon.House className='me-3 fs-4 fw-bold' /> Home
+                           <NavLink activeClassName={`${styles.activeNavLink}`} className={`${styles.navlink}`}  to="/home"><Icon.House className='me-3 fs-4 fw-bold' /> Home</NavLink>
+                            
                         </li>
                         <li className={`${styles.routes} list-group-item my-4 fs-6  align-items-center  flex justify-content-centerv`}>
-                            <Icon.Search className='me-3 fs-4 fw-bold' /> Search
+                        <NavLink activeClassName={`${styles.activeNavLink}`} className={`${styles.navlink}`}  to="/search"><Icon.Search className='me-3 fs-4 fw-bold' /> Search</NavLink>
+                            
                         </li>
                         <li className={`${styles.routes} list-group-item my-4 fs-6  align-items-center  flex justify-content-center`}>
-                            <Icon.HouseDoor className='me-3 fs-4 fw-bold' /> Your Library
+                        <NavLink activeClassName={`${styles.activeNavLink}`} className={`${styles.navlink}`}  to="/laibrary"><Icon.HouseDoor className='me-3 fs-4 fw-bold' /> Your Library</NavLink>
+                        
                         </li>
                     </ul>
                 </div>
                 <div className=' ps-3 text-white d-column-flex  align-items-center justify-content-center'>
                     <ul className='list'>
                         <li className={`${styles.routes} list-group-item my-4 fs-6s align-items-center  flex justify-content-center`}>
-                            <Icon.PlusSquareFill className='me-3 fs-4 fw-bold' /> Create Playlist
+                        <NavLink activeClassName={`${styles.activeNavLink}`} className={`${styles.navlink}`}  to="/playlist"><Icon.PlusSquareFill className='me-3 fs-4 fw-bold' /> Create Playlist</NavLink>
+                            
                         </li>
                         <li className={`${styles.routes} list-group-item my-4 fs-6  align-items-center  flex justify-content-centerv`}>
-                            <Icon.HeartFill className='me-3 fs-4 fw-bold' /> Liked Songs
+                            <NavLink activeClassName={`${styles.activeNavLink}`} className={`${styles.navlink}`} to="/likesongs"><Icon.HeartFill className='me-3 fs-4 fw-bold' /> Liked Songs</NavLink>
                         </li>
                     </ul>
                 </div>
@@ -36,7 +43,10 @@ export default function Layout({ children }) {
             <div class="col-10 mx-0 px-0">
                 <div class="row px-0">
                     {/*      */}
-                    <div class="col-12">{children}</div>
+                    <div class="col-12">{children}
+                        <Navbar/>
+                        <Playlist/>
+                    </div>
                 </div>
             </div>
         </div>

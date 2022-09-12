@@ -19,3 +19,16 @@
 .nav {
   background-color: #1e1e1e;
 }
+.navlink{
+ color: rgb(193, 197, 200);
+ text-decoration: none;
+ 
+
+}
+.navlink:hover{
+  color: white;
+}
+.activeNavLink{
+  color: orange;
+  background-color: aliceblue;
+}

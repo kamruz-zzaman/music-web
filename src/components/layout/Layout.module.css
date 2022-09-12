@@ -1,34 +1,23 @@
+.container {
+  width: 100%;
+  padding: 0 12px;
+}
 .sidebar {
   background-color: black;
   margin: 0;
   height: 97vh;
   padding: 5px 0px;
 }
-.logo {
-  width: 57%;
-}
-.routes {
-  font-weight: 800;
-  color: rgb(99, 99, 99) !important;
-  cursor: pointer;
-  transition: all 0.6s;
-}
-.routes:hover {
-  color: rgb(255, 255, 255) !important;
-}
-.nav {
-  background-color: #1e1e1e;
-}
-.navlink{
- color: rgb(193, 197, 200);
- text-decoration: none;
- 
 
-}
-.navlink:hover{
-  color: white;
-}
-.activeNavLink{
-  color: orange;
-  background-color: aliceblue;
+/* .nav {
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+} */
+.navbar {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  z-index: 100000;
+  opacity: 1;
 }

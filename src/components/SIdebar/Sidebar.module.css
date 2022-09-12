@@ -1,0 +1,29 @@
+.sidebar {
+  height: 90vh !important;
+  margin: 0px 0px;
+}
+.logo {
+  width: 57%;
+  margin: 0;
+  padding: 0;
+}
+.routes {
+  font-weight: 800;
+  color: rgb(99, 99, 99) !important;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+.routes:hover {
+  color: rgb(255, 255, 255) !important;
+}
+.navlink {
+  color: rgb(193, 197, 200);
+  text-decoration: none;
+}
+.navlink:hover {
+  color: white;
+}
+.activeNavLink {
+  color: orange;
+  background-color: aliceblue;
+}

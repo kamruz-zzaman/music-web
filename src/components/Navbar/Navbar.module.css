@@ -1,8 +1,10 @@
-.navbar{
-    height: 80px;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-left: 0px;
-    padding: 0;
+.navbar {
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-left: 0px;
+  padding: 0;
+  z-index: 10000;
+  background-color: rgba(47, 47, 47, 0.327);
 }

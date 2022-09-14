@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import { NavLink } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import SIdebar from '../SIdebar/SIdebar';
 import styles from './Layout.module.css';
@@ -20,11 +21,48 @@ export default function Layout({ children, globalAudioTrack }) {
                             {children}
                         </div>
                     </div>
-                    <div className="row px-0 mx-0 fixed-bottom">
-                        <div className={`coll-12 ${styles.player}`}>
-                            <ReactPlayer />
-                        </div>
-                    </div>
+                    {
+                        globalAudioTrack && (
+                            <div className={`row px-0 mx-0 fixed-bottom ${styles.player}`} >
+                                <div className={`col-3 d-flex px-5 justify-content-start align-items-center`}>
+                                    <img width={60} height={60} style={{ boxShadow: '0 0 10px #000' }} src={globalAudioTrack?.images?.coverart} />
+                                    <div className={`fw-bold ms-3 text-white`} >{globalAudioTrack.title}</div>
+                                </div>
+                                <div className={`col-6 `} style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                                    <div className='row d-flex'  >
+                                        {/* <button className='col-4 bg-transparent border-0 fs-3 text-white'>
+                                            <Icons.SkipBackwardFill />
+                                        </button> */}
+                                        <ReactPlayer
+                                            height={'20px'}
+                                            playing={true}
+                                            controls={true}
+                                            url={
+                                                globalAudioTrack.hub.actions[1].uri
+                                            }
+                                        />
+                                        {/* <button className='col-4 bg-transparent border-0 fs-3 text-white'>
+                                            <Icons.PlayCircleFill />
+                                        </button>
+                                        <button className='col-4 bg-transparent border-0 fs-3 text-white'>
+                                            <Icons.SkipForwardFill />
+                                        </button> */}
+                                    </div>
+
+                                </div>
+                                <div style={{height:'100%'}} className={`col-3 d-flex justify-content-end  px-5 align-items-center`}>
+                                    <NavLink
+                                        className={`rounded-pill fw-bold  d-flex justify-content-center align-items-center ${styles.navlink}`}
+                                        to='/playlist'
+                                    >
+                                        Create Playlist
+                                    </NavLink>
+                                    
+                                </div>
+                            </div>
+                        )
+                    }
+
                 </div>
             </div>
         </div>

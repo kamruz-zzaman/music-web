@@ -1,3 +1,11 @@
-.card:hover{
-    
+.container {
+  background-color: #1d1d1d;
+}
+.musicCard {
+  cursor: pointer;
+  transition: all 0.5s;
+  background-color: #181818 !important;
+}
+.musicCard:hover {
+  background-color: #282828 !important;
 }

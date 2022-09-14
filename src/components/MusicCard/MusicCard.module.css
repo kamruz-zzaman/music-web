@@ -1,0 +1,58 @@
+.musicCard {
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #181818 !important;
+  overflow: hidden;
+}
+
+.musicCard:hover {
+  background-color: #282828 !important;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.45);
+}
+.musicCard:hover img {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.45);
+}
+.playBtn {
+  transition: all 0.5s;
+  top: 400px;
+  right: 10px;
+  position: absolute;
+  font-size: 3rem;
+  color: #01d03f;
+}
+.musicCard:hover .playBtn {
+  top: 180px;
+  right: 10px;
+}
+.playBtn:hover {
+  transform: scale(1.12);
+}
+.musicCard {
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #181818 !important;
+  overflow: hidden;
+}
+
+.musicCard:hover {
+  background-color: #282828 !important;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.45);
+}
+.musicCard:hover img {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.45);
+}
+.playBtn {
+  transition: all 0.5s;
+  top: 400px;
+  right: 10px;
+  position: absolute;
+  font-size: 3rem;
+  color: #01d03f;
+}
+.musicCard:hover .playBtn {
+  top: 180px;
+  right: 10px;
+}
+.playBtn:hover {
+  transform: scale(1.12);
+}

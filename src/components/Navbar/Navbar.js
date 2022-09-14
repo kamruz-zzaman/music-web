@@ -7,16 +7,26 @@ import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   let location = useLocation();
+
+  const search = async()=>{
+    const  inputValue = document.getElementById("inputValue").value; 
+
+    const results  = await fetch("https://unsplash.com/photos/Yu0e-xuWoFI/"+inputValue)
+  }
+
+
   return (
     <>
       {location.pathname === "/search" ? (  
         <div className={`d-flex row col-12 mx-0 px-5  ${styles.navbar}`}>
-          <div className="col-4 px-0 mx-0  ">
-            <Form className="d-flex mx-0 ">
-              <Form.Control
+          <div className="col-5 px-0 mx-0  ">
+            <Form  className="d-flex mx-0 ">
+              <input
+              id="inputValue"
+              onChange={(e)=>search()}
                 type="search"
                 placeholder="What do you want to listen to ?"
-                className="me-2  rounded-pill"
+                className="me-2  rounded-pill px-5 py-2"
                 aria-label="Search"
               />
             </Form>
@@ -30,7 +40,7 @@ export default function Navbar() {
            
           </div>
              
-          <div className="col-3 px-0 d-flex justify-content-between align-items-center mx-0 text-light  fw-bold "> 
+          <div className="col-2 px-0 d-flex justify-content-between align-items-center mx-0 text-light  fw-bold "> 
           |
             <button className="bg-transparent border-0 text-light  fw-bold" >Sign Up</button>
             <Button variant="light rounded-pill fw-bold py-2 px-4 ">Log in</Button>

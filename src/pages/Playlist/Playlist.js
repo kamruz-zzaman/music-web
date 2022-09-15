@@ -27,7 +27,7 @@ export default function Playlist() {
   return (
     <div className={`pt-5 px-0 mx-0 ${Styles.container}`} >
       <div className="row m-0 pt-5">
-        <span className="text-light">Playlist</span>
+        <span className="text-light fs-2">Playlist</span>
         {music.map((item) => (
           <div className="p-3 col-3">
             <Card className={`text-light ${Styles.musicCard}`}  style={{ width: "13rem" }}>

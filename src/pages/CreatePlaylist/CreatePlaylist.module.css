@@ -1,0 +1,24 @@
+.createPlaylistForm {
+  margin-top: 80px;
+  height: 300px;
+  width: 100%;
+  background: rgb(47, 230, 114);
+  background: linear-gradient(
+    90deg,
+    rgba(47, 230, 114, 1) 0%,
+    rgba(47, 125, 52, 1) 100%
+  );
+}
+.customInput {
+  border: none;
+  color: white;
+  outline: none;
+}
+.customImgShadow {
+  box-shadow: -5px -1px 35px 0px rgba(0, 0, 0, 0.68);
+  -webkit-box-shadow: -5px -1px 35px 0px rgba(0, 0, 0, 0.68);
+  -moz-box-shadow: -5px -1px 35px 0px rgba(0, 0, 0, 0.68);
+}
+.w_50 {
+  width: 50%;
+}

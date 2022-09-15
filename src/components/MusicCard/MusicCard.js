@@ -6,6 +6,7 @@ import Styles from './MusicCard.module.css';
 export default function MusicCard({setGlobalAudioTrack,item}) {
   return (
     <div className="p-3 col-3">
+      {console.log('Card',item)}
             <Card className={`text-light ${Styles.musicCard}`}  style={{ width: "13rem" }}>
               <NavLink className={`position-relative`} to={''}>
                 <button onClick={()=>setGlobalAudioTrack(item)}><Icons.PlayCircleFill className={`${Styles.playBtn}`} /></button>

@@ -48,7 +48,7 @@ export default function SIdebar() {
                         <NavLink
                             activeClassName={`${styles.activeNavLink}`}
                             className={`${styles.navlink}`}
-                            to='/playlist'
+                            to='/createplaylist'
                         >
                             <Icon.PlusSquareFill className='me-3 fs-4 fw-bold' /> Create Playlist
                         </NavLink>

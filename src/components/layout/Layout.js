@@ -5,7 +5,7 @@ import Navbar from '../Navbar/Navbar';
 import SIdebar from '../SIdebar/SIdebar';
 import styles from './Layout.module.css';
 
-export default function Layout({ children, globalAudioTrack }) {
+export default function Layout({ children, setGlobalSelected, globalAudioTrack, setGlobalSearchTerm, setGlobalLoading }) {
     return (
         <div className={`${styles.container}`}>
             <div className="row px-0">
@@ -15,7 +15,11 @@ export default function Layout({ children, globalAudioTrack }) {
                 <div className="col-10 position-relative mx-0 px-0">
                     <div className="row px-0 position-relative  mx-0">
                         <div className={`col-12 position-absolute top-0 px-0 mx-0 ${styles.navbar}`}>
-                            <Navbar />
+                            <Navbar 
+                            setGlobalLoading={setGlobalLoading} 
+                            setGlobalSearchTerm={setGlobalSearchTerm}
+                            setGlobalSelected={setGlobalSelected}
+                             />
                         </div>
                         <div className={`col-12 mx-0 px-0 overflow-auto ${styles.content}`}>
                             {children}
@@ -50,14 +54,14 @@ export default function Layout({ children, globalAudioTrack }) {
                                     </div>
 
                                 </div>
-                                <div style={{height:'100%'}} className={`col-3 d-flex justify-content-end  px-5 align-items-center`}>
+                                <div style={{ height: '100%' }} className={`col-3 d-flex justify-content-end  px-5 align-items-center`}>
                                     <NavLink
                                         className={`rounded-pill fw-bold  d-flex justify-content-center align-items-center ${styles.navlink}`}
                                         to='/playlist'
                                     >
                                         Create Playlist
                                     </NavLink>
-                                    
+
                                 </div>
                             </div>
                         )

@@ -24,8 +24,8 @@ export default function Home({ setGlobalAudioTrack }) {
   return (
     <div className={`pt-5 px-0 mx-0 ${Styles.container}`} >
       <div className="row m-0 pt-5">
-        <span className="text-light">Playlist</span>
-        {music.map((item) => (
+        <span className="text-light fs-1">Playlist</span>
+        {music.slice(0, 4).map((item) => (
           <MusicCard item={item} setGlobalAudioTrack={setGlobalAudioTrack} />
         ))}
         

@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from "react";
-import Button from "react-bootstrap/Button";
 import { useForm } from "react-hook-form";
 
 import { useLocation } from "react-router-dom";
@@ -18,7 +17,7 @@ export default function Navbar({setGlobalSearchTerm,setGlobalLoading,setGlobalSe
         url: 'https://shazam.p.rapidapi.com/auto-complete',
         params: {term: data.term, locale: 'en-US'},
         headers: {
-          'X-RapidAPI-Key': '028c969847mshe4bf104e18216f7p1bc2c4jsn93e4de04c4cf',
+          'X-RapidAPI-Key': '399ba7356fmsh73e9d3a8ccb8320p1340e4jsn33bccd8edd99',
           'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
         }
       };
@@ -34,8 +33,8 @@ export default function Navbar({setGlobalSearchTerm,setGlobalLoading,setGlobalSe
   return (
     <>
       {location.pathname === "/search" ? (
-        <div className={`d-flex row col-12 mx-0 px-5  ${styles.navbar}`}>
-          <div className="col-5 px-0 mx-0  ">
+        <div className={` row col-lg-12 mx-0 px-0 px-md-5  ${styles.navbar}`}>
+          <div className="col-6 col-md-5 px-0 mx-0  ">
             <form className="input-group rounded-pill" onChange={handleSubmit(onSubmit)}>
               <input
                 className="form-control rounded-pill shadow-none"
@@ -45,36 +44,25 @@ export default function Navbar({setGlobalSearchTerm,setGlobalLoading,setGlobalSe
             </form>
 
           </div>
-          <div className="col-5  d-flex h-100 justify-content-between align-items-center ">
-            <ul className="list d-flex w-100 h-100 mt-3 justify-content-end  align-items-center pr-5 text-light  fw-bold ">
-              <li className="list-group-item  me-5    ">Premium</li>
-              <li className="list-group-item me-5   ">Support</li>
-              <li className="list-group-item  me-5    ">Download</li>
+          <div className="d-none col-md-5  d-lg-flex h-100 justify-content-between align-items-center ">
+            <ul className="list  d-lg-flex w-100 h-100 mt-3 justify-content-end  align-items-center pr-5 text-light  fw-bold ">
+              <li className="list-group-item  me-5 ">Premium</li>
+              <li className="list-group-item me-5 ">Support</li>
+              <li className="list-group-item  me-5 ">Download</li>
             </ul>
-          </div>
-          <div className="col-2 px-0 d-flex justify-content-between align-items-center mx-0 text-light  fw-bold ">
-            |
-            <button className="bg-transparent border-0 text-light  fw-bold" >Sign Up</button>
-            <Button variant="light rounded-pill fw-bold py-2 px-4 ">Log in</Button>
           </div>
         </div>
       ) : (
 
         <div className={`d-flex px-5 justify-content-end  ${styles.navbar}`}>
-          <div className="col-5  d-flex h-100 justify-content-between align-items-center ">
+          <div className="col-5  d-lg-flex h-100 justify-content-between align-items-center ">
             <ul className="list d-flex w-100 h-100 mt-3 justify-content-end  align-items-center pr-5 text-light  fw-bold ">
-              <li className="list-group-item  me-5    ">Premium</li>
-              <li className="list-group-item me-5   ">Support</li>
-              <li className="list-group-item  me-5    ">Download</li>
+              <li className="list-group-item  me-5">Premium</li>
+              <li className="list-group-item me-5">Support</li>
+              <li className="list-group-item  me-5">Download</li>
             </ul>
-
           </div>
 
-          <div className="col-3 px-0 d-flex justify-content-between align-items-center mx-0 text-light  fw-bold ">
-            |
-            <button className="bg-transparent border-0 text-light  fw-bold" >Sign Up</button>
-            <Button variant="light rounded-pill fw-bold py-2 px-4 ">Log in</Button>
-          </div>
         </div>
 
 

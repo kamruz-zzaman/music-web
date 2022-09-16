@@ -1,3 +1,10 @@
 .container {
   background-color: #1d1d1d;
 }
+.navlink {
+  color: rgb(99, 255, 105);
+  text-decoration: none;
+}
+.navlink:hover {
+  color: rgb(0, 225, 7);
+}

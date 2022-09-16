@@ -3,6 +3,7 @@
   transition: all 0.2s;
   background-color: #181818 !important;
   overflow: hidden;
+  border-radius: 40px;
 }
 
 .musicCard:hover {
@@ -48,7 +49,6 @@ button {
 }
 .addPlaylistBtn {
   transition-delay: 0;
-
   transition: all 0.5s;
   top: 400px;
   right: 10px;
@@ -66,7 +66,6 @@ button {
 
 .likeBtn {
   transition-delay: 1s;
-
   transition: all 0.5s;
   top: 400px;
   right: 15px;
@@ -81,10 +80,8 @@ button {
 .likeBtn:hover {
   transform: scale(1.12);
 }
-
 .playBtn {
   transition-delay: 2s;
-
   transition: all 0.5s;
   top: 400px;
   right: 10px;
@@ -102,5 +99,12 @@ button {
 .modulBtn:hover button {
   background-color: #181818;
   padding: 0 10px;
+  color: white;
+}
+.navlink {
+  color: rgb(193, 197, 200);
+  text-decoration: none;
+}
+.navlink:hover {
   color: white;
 }

@@ -5,14 +5,15 @@
   background: rgb(47, 127, 230);
   background: linear-gradient(
     90deg,
-    rgba(47, 127, 230, 1) 0%,
-    rgba(47, 90, 125, 1) 100%
+    rgb(119, 13, 248) 0%,
+    rgb(205, 0, 174) 100%
   );
 }
 .customInput {
   border: none;
   color: white;
   outline: none;
+  font-size: 4rem !important;
 }
 .customImgShadow {
   box-shadow: -5px -1px 35px 0px rgba(0, 0, 0, 0.68);
@@ -24,4 +25,13 @@
 }
 .shasow {
   box-shadow: rgb(16, 73, 172) 0px 60px 40px -7px;
+}
+.link {
+  color: rgb(193, 197, 200);
+  text-decoration: none;
+  background-color: white;
+  color: #494747;
+}
+.link:hover {
+  color: #2f2c2c;
 }

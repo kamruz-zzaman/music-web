@@ -24,10 +24,9 @@ export default function App() {
         <Route path='/' element={<Home setGlobalAudioTrack={setGlobalAudioTrack} />} />
         <Route path='/home' element={<Home setGlobalAudioTrack={setGlobalAudioTrack} />} />
         <Route path='/search' element={<Search globalSelected={globalSelected} setGlobalSelected={setGlobalSelected} globalLoading={globalLoading} setGlobalAudioTrack={setGlobalAudioTrack} globalSearchTerm={globalSearchTerm} />} />
-        <Route path='/library' element={<Playlist setGlobalAudioTrack={setGlobalAudioTrack} />} />
-        <Route path='/playlist' element={<Playlist />} />
+        <Route path='/playlist/:index' element={<Playlist setGlobalAudioTrack={setGlobalAudioTrack} />} />
         <Route path='/createplaylist' element={<CreatePlaylist />} />
-        <Route path='/liked' element={<FavouritesMusic />} />
+        <Route path='/liked' element={<FavouritesMusic  setGlobalAudioTrack={setGlobalAudioTrack} />} />
       </Routes>
     </Layout>
 

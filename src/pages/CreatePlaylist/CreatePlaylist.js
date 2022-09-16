@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Styles from "./CreatePlaylist.module.css";
 
 export default function CreatePlaylist() {
-    const [inputs, setInputs] = useState({});
-
+    const [playlist, setPlaylist] = useState();
+    const [update, setUpdate] = useState(Math.random())
+    
+    useEffect(()=>{
+        setPlaylist(localStorage.getItem('playlist')?JSON.parse(localStorage.getItem('playlist')):[])
+    },[update])
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
+
     const onSubmit = (data) => {
-        localStorage.setItem('playlist',JSON.stringify([{name:data.playlistName,songs:[]}]))
+        localStorage.setItem('playlist',JSON.stringify([
+            ...playlist,
+            {name:data.playlistName,songs:[]}
+        ]))
+        
+        setUpdate(Math.random())
+        alert('Playlist created successfully!')
+        window.location.reload();   
     }
-    console.log(errors);
 
     return (
         <>
@@ -31,7 +42,7 @@ export default function CreatePlaylist() {
                 </div>
                 <div className="col-8">
                     <div className="text-light fs-4">
-                        playlist
+                        Type playlist name here 👇
                     </div>
                     <div>
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -41,20 +52,18 @@ export default function CreatePlaylist() {
                                 defaultValue="Untitled Playlist"
                                 {...register("playlistName", { required: true, maxLength: 80 })}
                             />
-                            <input type="submit" value={'Create'} />
+                            <input style={{
+                                background:'#000000',
+                                padding:'15px 50px',
+                                color:'white',
+                                fontWeight:'bold',
+                                borderRadius:'30px'
+                            }} type="submit" value={'Create'} />
                         </form>
                     </div>
                 </div>
             </div>
-            <div>
-                <div>
-                    <p className="mt-4 fs-2 text-light">Let's find something for your playlist</p>
-                </div>
-                <div className={`input-group mb-3 ${Styles.w_50} `}>
-                    <input type="text" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                    <button className="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-                </div>
-            </div>
+            
         </>
     );
 }

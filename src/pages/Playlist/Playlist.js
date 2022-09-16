@@ -1,46 +1,31 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Card from "react-bootstrap/Card";
+import { useParams } from "react-router-dom";
+import MusicCard from '../../components/MusicCard/MusicCard';
 import Styles from './Playlist.module.css';
 
-const options = {
-  method: 'GET',
-  url: 'https://shazam.p.rapidapi.com/songs/list-artist-top-tracks',
-  params: { id: '40008598', locale: 'en-US' },
-  headers: {
-    'X-RapidAPI-Key': '028c969847mshe4bf104e18216f7p1bc2c4jsn93e4de04c4cf',
-    'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
-  }
-};
-export default function Playlist() {
+export default function Playlist({setGlobalAudioTrack}) {
+  const {index} = useParams()
   const [music, setMusic] = useState([]);
-  console.log('====================================');
-  console.log(music);
-  console.log('====================================');
+  const [playlist, setPlaylist] = useState([]);
   useEffect(() => {
-    axios.request(options).then(function (response) {
-      setMusic(response.data.tracks);
-    }).catch(function (error) {
-      console.error(error);
-    });
-  }, [])
+    console.log(index)
+    setPlaylist(JSON.parse(localStorage.getItem('playlist'))[index])
+    setMusic(JSON.parse(localStorage.getItem('playlist'))?JSON.parse(localStorage.getItem('playlist'))[index].songs:[])
+  }, [index])
+  console.log(music);
   return (
-    <div className={`pt-5 px-0 mx-0 ${Styles.container}`} >
-      <div className="row m-0 pt-5">
-        <span className="text-light fs-2">Playlist</span>
-        {music.map((item) => (
-          <div className="p-3 col-3">
-            <Card className={`text-light ${Styles.musicCard}`}  style={{ width: "13rem" }}>
-              <Card.Img variant="top" src={`${item.images.coverart}`} />
-              <Card.Body>
-                <Card.Title className={`fs-6 fw-bold`}>{item.title}</Card.Title>
-                <Card.Text  className={` text-secondary  fs-6`}>
-                  Some quick example text to build on the card
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-        ))}
+    <div className={`pt-5 px-0 mx-0 pb-5 ${Styles.container}`} >
+      <div className="row m-0 pt-5 pb-5">
+        <span className="text-light fs-1 fw-bold ">{playlist.name}</span>
+        {
+          music.length>0?
+        music.map((item) => (   
+          <MusicCard  loveActive={true} playlistActive={false} item={item} setGlobalAudioTrack={setGlobalAudioTrack} />
+        )):
+        <div className="fs-4 fw-bold text-light mt-5">
+        No song found
+        </div>
+        }
       </div>
     </div>
   );

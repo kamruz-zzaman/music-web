@@ -11,17 +11,18 @@ export default function Search({ globalSearchTerm, setGlobalAudioTrack, globalLo
 
 
     const handleGetSong = (term) => {
+        console.log(term);
         setSearchTerm(term)
         setGlobalSelected(true)
         const options = {
             method: 'GET',
             url: 'https://shazam.p.rapidapi.com/search',
-            params: { term: term, locale: 'en-US', offset: '0', limit: '5' },
+            params: {term: 'kiss', locale: 'en-US', offset: '0', limit: '5'},
             headers: {
-                'X-RapidAPI-Key': '399ba7356fmsh73e9d3a8ccb8320p1340e4jsn33bccd8edd99',
-                'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+              'X-RapidAPI-Key': 'aa1221ee39msh79d9e0e4a9b8edap1fbbe8jsne685301197c6',
+              'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
             }
-        };
+          };
         setIsLoading(true)
         axios.request(options).then(function (response) {
             setTrack(response.data.tracks);

@@ -17,7 +17,6 @@ export default function Home({ setGlobalAudioTrack }) {
   }, [])
 
 
-
   return (
     <>
       <div className={`pt-5 px-0 mx-0 ${Styles.container}`} >
